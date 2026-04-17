@@ -93,7 +93,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
         .logo {
             display: flex;
             align-items: center;
@@ -1360,7 +1363,13 @@
             padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(201, 168, 76, 0.1);
         }
-
+       .footer .logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transform: scale(0.7);
+    transform-origin: left;
+}
         .footer-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -1376,12 +1385,12 @@
             gap: 1rem;
         }
 
-        .footer-brand img {
-            height: 60px;
-            width: auto;
-            filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.2));
-        }
-
+       .footer-brand img {
+    height: 60px;
+    width: auto;           /* Mantém a proporção original */
+    object-fit: contain;   /* Garante que a imagem não distorça */
+    filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.2));
+}
         .footer-brand p {
             color: var(--gray-300);
             line-height: 1.8;
@@ -2214,7 +2223,7 @@ Atendimento personalizado com foco total em cada paciente
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="logotipo.jpg" alt="Dra. Luciana Veloso">
+               <img src="logotipo.jpg" class="logo-img" alt="Dra. Luciana Veloso">
                 <p>Transformando vidas através da nutrição inteligente e personalizada. 
                 Mais de 500 pacientes atendidos em Brasília-DF e todo Brasil.</p>
                 <div class="social-links">
