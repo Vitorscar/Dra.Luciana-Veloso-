@@ -1600,6 +1600,76 @@
                 display: none;
             }
         }
+        /* ============================================
+   CORREÇÃO PARA MOBILE - RESULTADOS
+   ============================================ */
+
+/* Ajuste geral para os cards de resultado */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;  /* Uma coluna só no mobile */
+        gap: 1rem;
+    }
+    
+    .result-card {
+        padding: 1.5rem 1rem;
+        min-width: 0;  /* Permite que o card encolha */
+    }
+    
+    .result-value {
+        font-size: 2.5rem;  /* Destaca o número */
+        font-weight: 800;
+    }
+    
+    .result-label {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+    
+    /* Correção das barras de macronutrientes */
+    .macro-item {
+        flex-direction: column;  /* Empilha label e barra */
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .macro-label {
+        width: auto;  /* Remove largura fixa */
+        font-size: 0.875rem;
+    }
+    
+    .macro-bar-bg {
+        width: 100%;  /* Barra ocupa largura total */
+        height: 35px;  /* Altura maior para toque */
+    }
+    
+    .macro-bar-fill {
+        font-size: 0.875rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .result-value {
+        font-size: 2rem;
+    }
+    
+    .macro-bar-fill {
+        font-size: 0.8rem;
+    }
+}
+
+/* Garantir que porcentagens não sumam */
+.macro-bar-fill {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 40px;  /* Largura mínima para mostrar % */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
     </style>
 <base target="_blank">
 </head>
